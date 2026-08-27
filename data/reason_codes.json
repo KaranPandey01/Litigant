@@ -1,0 +1,124 @@
+{
+  "networks": {
+    "visa": {
+      "10.4": {
+        "name": "Other Fraud - Card Absent Environment",
+        "category": "fraud",
+        "required_evidence": [
+          "avs_match_result",
+          "cvv_match_result",
+          "device_fingerprint_history",
+          "prior_transaction_history_same_card",
+          "shipping_address_match",
+          "ip_geolocation_consistency"
+        ],
+        "response_window_days": 30,
+        "typical_win_rate_hint": 0.35
+      },
+      "13.1": {
+        "name": "Merchandise/Services Not Received",
+        "category": "non_receipt",
+        "required_evidence": [
+          "proof_of_delivery",
+          "tracking_number_and_carrier_confirmation",
+          "delivery_signature_or_photo",
+          "customer_communication_log"
+        ],
+        "response_window_days": 30,
+        "typical_win_rate_hint": 0.55
+      },
+      "12.6.1": {
+        "name": "Duplicate Processing",
+        "category": "processing_error",
+        "required_evidence": [
+          "transaction_id_comparison",
+          "timestamp_and_amount_match",
+          "authorization_code_uniqueness_check"
+        ],
+        "response_window_days": 30,
+        "typical_win_rate_hint": 0.85
+      }
+    },
+    "mastercard": {
+      "4837": {
+        "name": "No Cardholder Authorization",
+        "category": "fraud",
+        "required_evidence": [
+          "avs_match_result",
+          "cvv_match_result",
+          "3ds_authentication_result",
+          "device_fingerprint_history",
+          "prior_transaction_history_same_card"
+        ],
+        "response_window_days": 45,
+        "typical_win_rate_hint": 0.30
+      },
+      "4855": {
+        "name": "Goods or Services Not Delivered",
+        "category": "non_receipt",
+        "required_evidence": [
+          "proof_of_delivery",
+          "tracking_number_and_carrier_confirmation",
+          "delivery_signature_or_photo",
+          "estimated_vs_actual_delivery_date"
+        ],
+        "response_window_days": 45,
+        "typical_win_rate_hint": 0.55
+      },
+      "4834": {
+        "name": "Duplicate Processing",
+        "category": "processing_error",
+        "required_evidence": [
+          "transaction_id_comparison",
+          "timestamp_and_amount_match",
+          "authorization_code_uniqueness_check"
+        ],
+        "response_window_days": 45,
+        "typical_win_rate_hint": 0.85
+      }
+    },
+    "rupay": {
+      "RC-30": {
+        "name": "Cardholder Disputes Transaction - Fraud",
+        "category": "fraud",
+        "required_evidence": [
+          "avs_match_result",
+          "cvv_match_result",
+          "device_fingerprint_history",
+          "otp_or_authentication_log"
+        ],
+        "response_window_days": 21,
+        "typical_win_rate_hint": 0.32
+      },
+      "RC-53": {
+        "name": "Non-Receipt of Goods/Services",
+        "category": "non_receipt",
+        "required_evidence": [
+          "proof_of_delivery",
+          "tracking_number_and_carrier_confirmation",
+          "customer_communication_log"
+        ],
+        "response_window_days": 21,
+        "typical_win_rate_hint": 0.50
+      }
+    }
+  },
+  "evidence_field_descriptions": {
+    "avs_match_result": "Address Verification Service match status at time of purchase",
+    "cvv_match_result": "CVV verification result at time of purchase",
+    "3ds_authentication_result": "3-D Secure / OTP authentication outcome",
+    "device_fingerprint_history": "Prior purchases from same device fingerprint",
+    "prior_transaction_history_same_card": "Prior successful, undisputed transactions on the same card",
+    "shipping_address_match": "Shipping address vs. billing/cardholder address match",
+    "ip_geolocation_consistency": "IP geolocation consistency with cardholder's known region",
+    "proof_of_delivery": "Signed/confirmed delivery record",
+    "tracking_number_and_carrier_confirmation": "Carrier tracking ID and delivery confirmation",
+    "delivery_signature_or_photo": "Signature or photo proof at delivery",
+    "customer_communication_log": "Support/communication history with the customer",
+    "transaction_id_comparison": "Comparison of transaction IDs for duplicate claims",
+    "timestamp_and_amount_match": "Timestamp and amount comparison across disputed transactions",
+    "authorization_code_uniqueness_check": "Check that authorization codes are distinct per charge",
+    "estimated_vs_actual_delivery_date": "Comparison of promised vs actual delivery date",
+    "otp_or_authentication_log": "OTP/authentication log at time of transaction"
+  }
+}

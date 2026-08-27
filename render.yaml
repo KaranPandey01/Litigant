@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: litigant-backend
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: ANTHROPIC_MODEL
+        value: claude-sonnet-4-6
+      - key: DATABASE_URL
+        fromDatabase:
+          name: litigant-db
+          property: connectionString
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: MIN_VIABLE_RECOVERY_INR
+        value: "50"
+    healthCheckPath: /health
+
+  - type: web
+    name: litigant-frontend
+    runtime: node
+    buildCommand: cd frontend && npm install && npm run build
+    startCommand: cd frontend && npm run start
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        fromService:
+          name: litigant-backend
+          type: web
+          property: host
+
+databases:
+  - name: litigant-db
+    plan: free

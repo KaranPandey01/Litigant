@@ -1,0 +1,375 @@
+{
+  "summary": {
+    "holdout_set_size": 60,
+    "decision_accuracy": 0.583,
+    "contest_recommended_count": 49,
+    "no_contest_recommended_count": 11,
+    "total_recovered_inr": 606166.48,
+    "total_contest_cost_spent_inr": 348850.39,
+    "net_value_inr": 257316.09,
+    "missed_recovery_inr_from_no_contest_calls": 133125.96,
+    "note": "decision_accuracy counts a call correct when: (a) contest was recommended and the dispute would have been won, or (b) no-contest was recommended and the dispute would have been lost. This is an honest metric \u2014 it penalizes both wasted contests and missed recoveries, not just one direction."
+  },
+  "per_case": [
+    {
+      "dispute_id": "c0aa78a2",
+      "recommendation": "contest",
+      "would_have_won": false,
+      "amount_inr": 14746.73
+    },
+    {
+      "dispute_id": "db5de3d8",
+      "recommendation": "contest",
+      "would_have_won": false,
+      "amount_inr": 36159.71
+    },
+    {
+      "dispute_id": "7ad7d002",
+      "recommendation": "contest",
+      "would_have_won": false,
+      "amount_inr": 22652.98
+    },
+    {
+      "dispute_id": "e921e6da",
+      "recommendation": "no_contest",
+      "would_have_won": false,
+      "amount_inr": 6038.23
+    },
+    {
+      "dispute_id": "311a81f9",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 3595.73
+    },
+    {
+      "dispute_id": "1766ac96",
+      "recommendation": "no_contest",
+      "would_have_won": false,
+      "amount_inr": 28368.94
+    },
+    {
+      "dispute_id": "54be8657",
+      "recommendation": "no_contest",
+      "would_have_won": false,
+      "amount_inr": 7336.4
+    },
+    {
+      "dispute_id": "2cfcafb9",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 24105.96
+    },
+    {
+      "dispute_id": "f0ce5dcb",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 20937.38
+    },
+    {
+      "dispute_id": "8f0fd406",
+      "recommendation": "contest",
+      "would_have_won": false,
+      "amount_inr": 22891.29
+    },
+    {
+      "dispute_id": "a1dd1269",
+      "recommendation": "contest",
+      "would_have_won": false,
+      "amount_inr": 14697.72
+    },
+    {
+      "dispute_id": "fd520874",
+      "recommendation": "no_contest",
+      "would_have_won": false,
+      "amount_inr": 42954.1
+    },
+    {
+      "dispute_id": "7e727f24",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 31831.61
+    },
+    {
+      "dispute_id": "fff9e351",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 36353.17
+    },
+    {
+      "dispute_id": "f23c686d",
+      "recommendation": "no_contest",
+      "would_have_won": true,
+      "amount_inr": 38206.13
+    },
+    {
+      "dispute_id": "079f4629",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 34301.49
+    },
+    {
+      "dispute_id": "b5ad77d9",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 41907.85
+    },
+    {
+      "dispute_id": "803f4ed3",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 6004.09
+    },
+    {
+      "dispute_id": "4e4f3cc2",
+      "recommendation": "no_contest",
+      "would_have_won": false,
+      "amount_inr": 15916.42
+    },
+    {
+      "dispute_id": "d8b4d1e3",
+      "recommendation": "contest",
+      "would_have_won": false,
+      "amount_inr": 44873.58
+    },
+    {
+      "dispute_id": "1c1a990d",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 32927.65
+    },
+    {
+      "dispute_id": "9451ce29",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 40070.05
+    },
+    {
+      "dispute_id": "cfde2586",
+      "recommendation": "contest",
+      "would_have_won": false,
+      "amount_inr": 32099.34
+    },
+    {
+      "dispute_id": "434cbb1f",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 38816.62
+    },
+    {
+      "dispute_id": "156a7f3e",
+      "recommendation": "contest",
+      "would_have_won": false,
+      "amount_inr": 8347.72
+    },
+    {
+      "dispute_id": "ab33743d",
+      "recommendation": "no_contest",
+      "would_have_won": false,
+      "amount_inr": 16565.6
+    },
+    {
+      "dispute_id": "cfcb4f79",
+      "recommendation": "contest",
+      "would_have_won": false,
+      "amount_inr": 19529.34
+    },
+    {
+      "dispute_id": "d69123e1",
+      "recommendation": "no_contest",
+      "would_have_won": true,
+      "amount_inr": 40490.87
+    },
+    {
+      "dispute_id": "e0156b1a",
+      "recommendation": "contest",
+      "would_have_won": false,
+      "amount_inr": 24899.09
+    },
+    {
+      "dispute_id": "c891bff9",
+      "recommendation": "contest",
+      "would_have_won": false,
+      "amount_inr": 36663.66
+    },
+    {
+      "dispute_id": "4bf80b1c",
+      "recommendation": "contest",
+      "would_have_won": false,
+      "amount_inr": 4125.99
+    },
+    {
+      "dispute_id": "28708a2b",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 10042.23
+    },
+    {
+      "dispute_id": "de481ad5",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 2331.19
+    },
+    {
+      "dispute_id": "ece82b08",
+      "recommendation": "no_contest",
+      "would_have_won": false,
+      "amount_inr": 31521.75
+    },
+    {
+      "dispute_id": "494841a0",
+      "recommendation": "no_contest",
+      "would_have_won": true,
+      "amount_inr": 34379.47
+    },
+    {
+      "dispute_id": "426edeb8",
+      "recommendation": "contest",
+      "would_have_won": false,
+      "amount_inr": 23835.49
+    },
+    {
+      "dispute_id": "94e3b71b",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 4740.25
+    },
+    {
+      "dispute_id": "992efb29",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 31557.47
+    },
+    {
+      "dispute_id": "840b9656",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 19955.67
+    },
+    {
+      "dispute_id": "b6be2126",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 19604.31
+    },
+    {
+      "dispute_id": "8efdce30",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 19093.37
+    },
+    {
+      "dispute_id": "83373ec4",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 7335.38
+    },
+    {
+      "dispute_id": "ea5a8f2c",
+      "recommendation": "contest",
+      "would_have_won": false,
+      "amount_inr": 20875.01
+    },
+    {
+      "dispute_id": "298ac2fa",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 7068.13
+    },
+    {
+      "dispute_id": "59ff5b85",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 43422.98
+    },
+    {
+      "dispute_id": "568810a4",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 20231.88
+    },
+    {
+      "dispute_id": "0d0c1412",
+      "recommendation": "contest",
+      "would_have_won": false,
+      "amount_inr": 28860.2
+    },
+    {
+      "dispute_id": "73537c16",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 12468.68
+    },
+    {
+      "dispute_id": "32a50df3",
+      "recommendation": "contest",
+      "would_have_won": false,
+      "amount_inr": 44399.87
+    },
+    {
+      "dispute_id": "0d40d366",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 29519.3
+    },
+    {
+      "dispute_id": "2fc05b68",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 22421.27
+    },
+    {
+      "dispute_id": "a1028c02",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 20630.17
+    },
+    {
+      "dispute_id": "41a644ae",
+      "recommendation": "contest",
+      "would_have_won": false,
+      "amount_inr": 14537.61
+    },
+    {
+      "dispute_id": "046a28b6",
+      "recommendation": "contest",
+      "would_have_won": false,
+      "amount_inr": 23720.65
+    },
+    {
+      "dispute_id": "386d3288",
+      "recommendation": "contest",
+      "would_have_won": false,
+      "amount_inr": 21166.1
+    },
+    {
+      "dispute_id": "1c9e9160",
+      "recommendation": "contest",
+      "would_have_won": false,
+      "amount_inr": 40949.54
+    },
+    {
+      "dispute_id": "d10bc0b9",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 9694.38
+    },
+    {
+      "dispute_id": "03331258",
+      "recommendation": "contest",
+      "would_have_won": true,
+      "amount_inr": 15198.22
+    },
+    {
+      "dispute_id": "d7afb9a3",
+      "recommendation": "contest",
+      "would_have_won": false,
+      "amount_inr": 38078.28
+    },
+    {
+      "dispute_id": "0e3ffa49",
+      "recommendation": "no_contest",
+      "would_have_won": true,
+      "amount_inr": 20049.49
+    }
+  ]
+}
