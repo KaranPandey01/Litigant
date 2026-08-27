@@ -132,5 +132,4 @@ Render dashboard (not committed).
 
 ## Tech stack
 
-FastAPI · SQLAlchemy · PostgreSQL · scikit-learn (Isolation Forest) · FAISS ·
-Anthropic Claude API · Next.js (frontend, see `frontend/`) · Render (deploy)
+FastAPI · SQLAlchemy · PostgreSQL · scikit-learn (Isolation Forest) · FAISS  · Next.js (frontend, see `frontend/`) · Render (deploy)
