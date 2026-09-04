@@ -2,6 +2,7 @@ services:
   - type: web
     name: litigant-backend
     runtime: docker
+    plan: free
     dockerfilePath: ./backend/Dockerfile
     dockerContext: .
     envVars:
@@ -20,6 +21,7 @@ services:
   - type: web
     name: litigant-frontend
     runtime: node
+    plan: free
     buildCommand: cd frontend && npm install && npm run build
     startCommand: cd frontend && npm run start
     envVars:
