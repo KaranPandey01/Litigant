@@ -109,8 +109,18 @@ Write 3-5 sentences summarizing the evidence being submitted and why it addresse
 reason code. If evidence is missing or weak for a required field, note it plainly rather than
 overstating the case — the merchant needs an honest assessment, not marketing copy."""
 
-    response = _client.models.generate_content(model=settings.GEMINI_MODEL, contents=prompt)
-    return response.text.strip()
+    try:
+        response = _client.models.generate_content(model=settings.GEMINI_MODEL, contents=prompt)
+        return response.text.strip()
+    except Exception as e:
+        present = [f for f, v in collected_fields.items() if v["present"]]
+        missing = [f for f, v in collected_fields.items() if not v["present"]]
+        return (
+            f"[Gemini narrative failed ({type(e).__name__}) — deterministic fallback used] "
+            f"Dispute {dispute_id} under {network} code {reason_code} ({reason_name}). "
+            f"Evidence available: {', '.join(present) or 'none'}. "
+            f"Evidence missing: {', '.join(missing) or 'none'}."
+        )
 
 
 def new_bundle_id() -> str:

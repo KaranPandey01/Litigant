@@ -56,19 +56,34 @@ Transaction metadata: {json.dumps(raw_transaction_data)}
 Respond ONLY with JSON, no markdown, no preamble:
 {{"reason_code": "<code>", "confidence": <0.0-1.0>, "rationale": "<one sentence>"}}"""
 
-    response = _client.models.generate_content(model=settings.GEMINI_MODEL, contents=prompt)
-    text = response.text.strip()
-    if text.startswith("```"):
-        text = text.strip("`")
-        if text.startswith("json"):
-            text = text[4:]
-        text = text.strip()
-    parsed = json.loads(text)
-    code = parsed["reason_code"]
+    try:
+        response = _client.models.generate_content(model=settings.GEMINI_MODEL, contents=prompt)
+        text = response.text.strip()
+        if text.startswith("```"):
+            text = text.strip("`")
+            if text.startswith("json"):
+                text = text[4:]
+            text = text.strip()
+        parsed = json.loads(text)
+        code = parsed["reason_code"]
+        if code not in network_codes:
+            raise ValueError(f"Model returned unknown reason code: {code}")
 
-    return {
-        "reason_code": code,
-        "reason_name": network_codes.get(code, {}).get("name", "Unknown"),
-        "confidence": parsed.get("confidence", 0.0),
-        "rationale": parsed.get("rationale", ""),
-    }
+        return {
+            "reason_code": code,
+            "reason_name": network_codes.get(code, {}).get("name", "Unknown"),
+            "confidence": parsed.get("confidence", 0.0),
+            "rationale": parsed.get("rationale", ""),
+        }
+    except Exception as e:
+        # A live LLM call can fail for many reasons (model retired, rate limit,
+        # malformed JSON, network hiccup). A dispute-processing pipeline should
+        # degrade to a clear, auditable fallback rather than crash the request --
+        # the alternative is a 500 that loses the merchant's whole submission.
+        first_code = next(iter(network_codes)) if network_codes else "UNKNOWN"
+        return {
+            "reason_code": first_code,
+            "reason_name": network_codes.get(first_code, {}).get("name", "Unknown"),
+            "confidence": 0.0,
+            "rationale": f"Gemini classification failed ({type(e).__name__}) — deterministic fallback used.",
+        }
